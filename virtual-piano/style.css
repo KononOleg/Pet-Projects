@@ -1,0 +1,265 @@
+
+body
+{
+    background-image: url(assets/img/bg.jpg);
+    overflow-x: hidden;
+    margin: 0;
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+}
+
+/*Header
+==============*/
+
+.header
+{
+    text-align: center;
+    padding-top: 40px;
+}
+
+.header__title
+{
+    line-height: 60px;
+    font-weight: 300;
+    color: rgb(255, 255, 255);
+    margin: 0;
+}
+/*Main
+==============*/
+
+.main{
+    margin:  0 auto;
+    width: 100%;
+    min-height: calc(100vh - 300px);
+    max-width: 1140px;
+}
+
+
+.bnt__container
+{
+    display: flex;
+    justify-content: center ;
+    margin-bottom: 80px;
+    margin-top: 150px;
+   
+}
+.bnt
+{
+    width: 150px;
+    height: 40px;
+    padding: 0 10px;
+    background-color: #454c53;
+    border: 0;
+    border-radius: 2px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    color: #fff;
+    outline: 0;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+.bnt:hover
+{
+    background-color: #515961;
+}
+
+.btn:hover {
+    background-color: #515961;
+}
+.btn-active {
+    background-color: #00b4a4;
+}
+.btn-active:hover {
+    background-color: #00c9b7;
+}
+.bnt__fullscreen
+{
+    position: fixed;
+    top: 95px;
+    right: 40px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    background-image: url(assets/img/fullscreen-open.svg);  
+    background-size: contain;
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 0;
+    outline: none;
+}
+.bnt__fullscreen:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+.fullscreen
+{
+    background-image:url("assets/img/fullscreen-exit.svg")
+}
+.piano
+{
+    display: flex;
+    justify-content: center ;
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    height: 400px;
+}
+
+.piano__key {
+    position: relative;
+    padding: 0;
+    width: 70px;
+    height: 270px;
+    margin: 0 3px;
+    border: white;
+    border-radius: 0px 0px 9px 9px;
+    background-color: rgb(255, 255, 255);
+    transition: 0.3s;
+    cursor: pointer;    
+    outline: none; 
+}
+.piano__key:hover::before
+ {
+	color: rgb(180, 180, 180);
+}
+
+
+.piano__key::before {
+    content: attr(data-note);
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	font-size: 26px;
+	line-height: 40px;
+	text-align: center;
+	color: #ffffff;
+	bottom: -45px;
+	left: 20px;
+	transition: 0.3s;
+    pointer-events: none;
+}
+
+
+.piano__key__letter::before {
+	content: attr(data-letter);
+}
+
+
+.piano__key:hover
+{
+    background-color: rgb(216, 216, 216);
+}
+.piano__key.sharp:hover
+{
+    background-color: rgb(30, 30, 30);
+}
+
+.piano__key.active
+{
+    transform: scale(.95);
+
+}
+
+.piano__key.active::after,
+.piano__key.active::before {
+	color: #00b4a4;
+}
+
+
+.piano__key.sharp::before,
+.piano__key.sharp::after {
+	bottom: 175px;
+	left: 7px;
+   
+}
+
+.piano__key.sharp
+{
+    position: absolute;
+    width: 54px;
+    height: 170px;
+    background-color: #000000;
+    border: 0;
+    border-radius: 0px 0px 9px 9px;
+    top: 0;
+    z-index: 3;
+}
+
+
+.Csharp
+{
+    left:80px;
+}
+.Dsharp
+{
+    left:155px;
+}
+.Fsharp
+{
+    left:305px;
+}
+.Gsharp
+{
+    left:385px;
+}
+.Asharp
+{
+    left:460px;
+}
+
+
+/*footer
+==============*/
+
+.footer__container
+{
+
+    max-width: 1140px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.github
+{
+    display: block;
+    width: 120px;
+    height: 45px;
+    padding-left: 45px;
+    background-image: url(assets/img/github.svg);
+    background-size: 35px;
+    background-repeat: no-repeat;
+    background-position: left center;
+    line-height: 45px;
+    color: #cbd5de;
+    font-size: 16px;
+    font-family: "Open Sans", sans-serif;
+    transition: 0.3s;
+}
+.rss
+{
+    display: block;
+    position: relative;
+    font-family: "Open Sans", sans-serif;
+    width: 86px;
+    height: 32px;
+    background-image: url(assets/img/rss.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left center;
+    padding-right: 15px;
+}
+.rss__year
+{
+    position: absolute;
+    bottom: 0;
+    right: -10px;
+    font-size: 21px;
+    letter-spacing: -2px;
+    color: #cbd5de;
+    line-height: 0.9;
+    font-weight: bold;
+    transition: 0.3s;
+}
