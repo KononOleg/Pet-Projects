@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Zoos  page</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header class="header">
+            <div class="header__wrapper">
+                <h1 class="header__logo"><a class="logo__title"  href="../../landing/index.html">zoo  <span class="logo__subtitle">online</span></a></h1>
+                <nav class="header__nav">
+                    <ul class="nav__items">
+                        <li><a class="nav__link" href="../../landing/index.html">About</a></li>
+                        <li><a class="nav__link  nav__link_active">Zoos</a></li>
+                        <li><a class="nav__link" href="../../map/map.html">Map</a></li>
+                        <li><a class="nav__link" href="#contact-us">Contact Us</a></li>
+                        <li><a class="nav__link"  target="_blank" href="https://www.figma.com/file/HKt5Nlx0jghQtJp6jW9q8F/zooApp?node-id=155%3A1736">Design</a></li>
+                    </ul>
+                </nav>
+                <label class="header__switch">
+                    <input type="checkbox">
+                    <span class="slider"></span>
+                  </label>
+            </div>
+        </header>
+        <main>
+            <section  class="zoo">
+                <aside class="zoo__sidebar">
+                    <button class="arrow"><img src="../../../assets/images/arrow-up.png" alt="arrow-up"></button>
+                    <div class="sidebar__wrapper">
+                        <div title="Panda" class="pet">
+                            <img  class="pet__img" src="../../../assets/images/pets-img/panda-2.png">
+                        </div>
+                        <div title="Eagle" class="pet">
+                            <img class="pet__img" src="../../../assets/images/pets-img/eagle-2.png">
+                        </div>
+                        <div title="Alligator" class="pet">
+                            <img  class="pet__img" src="../../../assets/images/pets-img/alligator-3.png">
+                        </div>
+                        <div title="Gorilla" class="pet  pet pet_active">
+                            <img  class="pet__img   pet__img_active" src="../../../assets/images/pets-img/gorilla-3.png">
+                        </div>
+                    </div>
+                    <button class="arrow"><img src="../../../assets/images/arrow-down.png" alt="right-down"></button>
+                </aside>
+                <div  class="zoo__wrapper">
+                    <h2 class="zoo__title">GRACE Gorilla Forest Corridor Cam</h2>
+                    <div class="zoo__page">
+                        <div class="zoo__video">
+                            <iframe width="790" height="442" src="https://www.youtube.com/embed/rgXWDk7rh4w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div class="zoo__slider">
+                                <div class="slider__wrapper">
+                                    <div class="slider__videos">
+                                        <div class="slider__video">
+                                            <iframe width="246" height="141" src="https://www.youtube.com/embed/rgXWDk7rh4w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                        </div>
+                                        <div class="slider__video">
+                                            <iframe width="246" height="141" src="https://www.youtube.com/embed/rgXWDk7rh4w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                        </div>
+                                        <div class="slider__video">
+                                            <iframe width="246" height="141" src="https://www.youtube.com/embed/rgXWDk7rh4w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                        </div>
+                                    </div>
+                                    <div class="slider__input">
+                                            <input checked type="radio" name="slider" id="switch1">
+                                            <input type="radio" name="slider" id="switch2">
+                                            <input type="radio" name="slider" id="switch3">
+                                            <div  class="active">
+                                                <label for="switch1"></label>
+                                                <label for="switch2"></label>
+                                                <label for="switch3"></label>
+
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="zoo__info">
+                            <h3 class="info__title">Population:</h3>
+                            <p class="info__text">Over 100,000 western lowland gorillas</p>
+                            <h3 class="info__title">Habitat:</h3>
+                            <p class="info__text">Gorillas primarily inhabit tropical forest habitats.Tropical forests are characterized as having little variance in temperature (around 23°C) and length of daylight (around 12 hours).</p>
+                            <h3 class="info__title">Diet:</h3>
+                            <p class="info__text">Gorillas stick to a mainly vegetarian diet, feeding on stems, bamboo shoots and fruits. Western lowland gorillas, however, also have an appetite for termites and ants, and break open termite nests to eat the larvae.</p>
+                            <button class="button button_info">feed</button>
+                        </div>
+                    </div>
+                    <div class="plug"> </div>   
+                </div>  
+            </section>
+        </main>
+        <footer class="footer">
+            <div class="footer__wrapper">
+                <div class="footer__info">
+                    <div class="footer__contact-us"  id="contact-us">
+                        <h2 class="footer__logo"><a class="logo__title"  href="../../landing/index.html">zoo  <span class="logo__subtitle">online</span></a></h2>
+                        <form class="footer__form">
+                            <h3 class="contact-us__titlte">Contact us</h3>
+                            <input type="text" required id=""  class="contact-us__field" placeholder="Name">
+                            <input type="email" required  id="" class="contact-us__field" placeholder="Email">
+                            <fieldset class="fieldset__message">
+                                <legend>Please enter your message </legend>
+                                <textarea required maxlength="280" class="contact-us__message"></textarea>
+                            </fieldset>
+                                <div class="checkbox__wrapper">
+                                    <input type="checkbox" required class="contact-us__checkbox">
+                                     <label class="checkbox__text" for="contact-us__checkbox">I agree to the processing of Personal Data</label>
+                                </div>
+                                <button type="submit" class="button contact-us__button">send <img src="../../../assets/images/contact-us__arrow.png" alt="arrow"></button>
+                        </form>
+                    </div>
+                    <div class="footer__adress">
+                        <nav class="footer__nav">
+                            <ul class="nav__items">
+                                <li><a class="nav__link footer-nav__link" href="../../landing/index.html">About</a></li>
+                                <li><a class="nav__link footer-nav__link" href="../gorilla/gorilla.html">Zoos</a></li>
+                                <li><a class="nav__link footer-nav__link" href="../../map/map.html">Map</a></li>
+                                <li><a class="nav__link footer-nav__link" href="https://www.figma.com/file/HKt5Nlx0jghQtJp6jW9q8F/zooApp?node-id=155%3A1736" target="_blank">Design</a></li>
+                            </ul>
+                        </nav>
+                        <h3 class="adress__title">ZOO Online Centre</h3>
+                        <address class="adress">
+                            <p class="adress__text">132, Address District, Street Open Daily 10:00 am - 5:00 pm</p>
+                            <a class="adress__contact" href="tel:7021633433">T(702) 163-3433</a>
+                            <a class="adress__contact" href="mailto:zoo.online@gmail.com">zoo.online@gmail.com</a></p>
+                        </address>
+                        <div class="social">
+                            <ul class="social__items footer__social">
+                                <li class="social__link footer__link"><a href="https://www.instagram.com" target="_blank"><img src="../../../assets/icons/inst.png"></a></li>
+                                <li class="social__link footer__link"><a href="https://twitter.com" target="_blank"><img src="../../../assets/icons/twitter.png"></a></li>
+                                <li class="social__link footer__link"><a href="https://www.youtube.com" target="_blank"><img src="../../../assets/icons/vk.png"></a></li>
+                                <li class="social__link footer__link"><a href="https://www.vk.com" target="_blank"><img src="../../../assets/icons/youtube.png"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button  class="button footer__button">donate for volunteers</button>  
+                </div> 
+                <div class="footer__copyright">
+                    <p class="copyright__text">@Noora Sagnayeva</p>
+                    <p class="copyright__text">@RSSchool and @Yem Digital - 2021</p>
+                </div>
+            </div>
+        </footer>   
+    </body>
+</html>
