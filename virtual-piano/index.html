@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>virtual-piano</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+        
+    </head>
+    <body>
+
+        <header class="header">
+            <h1 class="header__title">Virtual piano</h1>
+        </header>
+        <main class="main">
+            <div class="bnt__container">
+                <button class="bnt bnt-notes btn-active">Notes</button>
+                <button class="bnt bnt-letters">Letters</button>
+              
+            </div>    
+            <div class="piano">
+                <button class="piano__key" data-letter="D" data-note="C" ></button>
+                <button class="piano__key" data-letter="F" data-note="D"></button>
+                <button class="piano__key" data-letter="G" data-note="E"></button>
+                <button class="piano__key" data-letter="H" data-note="F"></button>
+                <button class="piano__key" data-letter="J" data-note="G"></button>
+                <button class="piano__key" data-letter="K" data-note="A"></button>
+                <button class="piano__key" data-letter="L" data-note="B"></button>
+                <button class="piano__key sharp Csharp" data-letter="R" data-note="C♯"></button>
+                <button class="piano__key sharp Dsharp" data-letter="T" data-note="D♯"></button>
+                <button class="piano__key sharp Fsharp" data-letter="U" data-note="F♯"></button>
+                <button class="piano__key sharp Gsharp" data-letter="I" data-note="G♯"></button>
+                <button class="piano__key sharp Asharp" data-letter="O" data-note="A♯"></button>
+            </div>
+            <button class=bnt__fullscreen></button>
+        </main>
+        <footer class="footer">
+            <div class="footer__container">
+                <a class="github" href="https://github.com/KononOleg">KononOleg</a>
+                <a class="rss" href="https://rs.school/js/">
+                    <span class="rss__year">'21</span>
+                </a>
+            </div>
+        </footer>
+        <script src="script.js"></script>
+    </body>
+</html>
