@@ -402,7 +402,7 @@ input:checked + .slider:before {
 .details__button-green
 {
     width: 113px;
-    color: linear-gradient(106.89deg, #4BD8B5 -14.32%, #49D6DF 100.68%);
+    color: #4BD8B5 
 
 }
 .details__button:hover
