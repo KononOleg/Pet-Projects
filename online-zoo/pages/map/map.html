@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Map</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <header class="header" id="header">
+            <div class="header__wrapper">
+                <h1 class="header__logo"><a class="logo__title"  href="../landing/index.html">zoo  <span class="logo__subtitle">online</span></a></h1>
+                <nav class="header__nav">
+                        <input type="checkbox"  id="burger__toggle">
+                        <label for="burger__toggle" class="burger__button">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                       </label>
+                    <ul class="nav__items header__items">
+                        <li><a class="nav__link" href="../landing/index.html">About</a></li>
+                        <li><a class="nav__link" href="../zoos/panda/panda.html">Zoos</a></li>
+                        <li><a class="nav__link nav__link_active">Map</a></li>
+                        <li><a class="nav__link" href="#contact-us">Contact Us</a></li>
+                        <li><a class="nav__link"  target="_blank" href="https://www.figma.com/file/HKt5Nlx0jghQtJp6jW9q8F/zooApp?node-id=155%3A1736">Design</a></li>
+                    </ul>
+                </nav>
+                <label class="header__switch">
+                    <input type="checkbox">
+                    <span class="slider"></span>
+                  </label>
+            </div>
+        </header>
+        <main>
+            <section  class="map">
+                <div  class="map__wrapper">
+                    <h2 class="map__title">Choose your favorite</h2>
+                    <p class="map__text">As a voice for wildlife, we are devastated by the impact of the 2020 Australian bushfires on precious species and their habitat, and we are determined to assist in all aspects, including providing veterinary support and raising much-needed emergency funds. Zoo Online saves wildlife and inspires everyone to make conservation a priority in their lives. Animals have the right to a pain-free and happy life. They have equal claim to the resources of this planet, and deserve a life of dignity and compassion.As a voice for wildlife, we are devastated by the impact of the 2020 Australian bushfires on precious species and their habitat.</p>
+                    <div class="map__slider">
+                        <button class="arrow"><img src="../../assets/images/left-arrow.png" alt="left-arrow"></button>
+                        <div class="slider__wrapper">
+                            <div class="pet" title="Gorilla">
+                                <img class="pet__img" src="../../assets/images/pets-img/gorilla-3.png">
+                            </div>
+                            <div class="pet pet_active" title="Panda">
+                                <img   class="pet__img pet__img_active" src="../../assets/images/pets-img/panda-2.png">
+                            </div>
+                            <div class="pet" title="Alligator">
+                                <img class="pet__img" src="../../assets/images/pets-img/alligator-3.png">
+                            </div>
+                            <div class="pet" title="Eagle">
+                                <img  class="pet__img" src="../../assets/images/pets-img/eagle-2.png">
+                            </div>                       
+                            <div class="pet" title="Tiger">
+                                <img class="pet__img" src="../../assets/images/pets-img/tiger-2.png">
+                            </div>
+                            <div class="pet" title="Elephant">
+                                <img class="pet__img" src="../../assets/images/pets-img/elephant-2.png">
+                            </div>
+                            <div class="pet" title="Lion">
+                                <img class="pet__img"v src="../../assets/images/pets-img/lion-2.png">
+                            </div>
+                            <div class="pet"title="Zebra">
+                                <img class="pet__img" src="../../assets/images/pets-img/zebra-2.png">
+                            </div>
+                        </div>
+                        <button class="arrow"><img src="../../assets/images/right-arrow.png" alt="right-arrow"></button>
+                    </div>
+                    <form class="progress-bar map__progress-bar ">
+                        <p class="progress-bar__value"><output class="progress-bar__slider-count" name="">02/</output>08</p> 
+                         <input  type="range" id="" class="progress-bar__slider" name=""
+                                min="1" max="8" value="2">
+                     </form>
+                     <div class="map__geogr-map">
+                        <div class="geogr-map__wrapper">
+                            <img class="map__img" src="../../assets/images/map.png" alt="map">
+                            <div class="geogr-map__placeholder placeholder_eagle" title="Eagle" >
+                                <svg  visibility="hidden" height="0" width="0">
+                                    <symbol id="placeholder" viewBox="0 0 67 94">
+                                        <g>
+                                            <path d="M33.6913 0.150391C15.4582 0.150391 0.625 14.9853 0.625 33.2206C0.625 50.8607 30.8554 91.051 32.1431 92.7551C32.5049 93.2415 33.0846 93.5254 33.6915 93.5254C34.2983 93.5254 34.878 93.2415 35.2398 92.7551C36.5274 91.051 66.7579 50.8609 66.7579 33.2206C66.7576 14.9853 51.9244 0.150391 33.6913 0.150391ZM33.6913 50.7285C24.0398 50.7285 16.1856 42.8733 16.1856 33.2206C16.1856 23.568 24.0398 15.7128 33.6913 15.7128C43.3428 15.7128 51.197 23.568 51.197 33.2206C51.197 42.8733 43.3428 50.7285 33.6913 50.7285Z" />
+                                            <defs>
+                                            <linearGradient id="paint0_linear" x1="-11.7233" y1="0.15039" x2="83.0362" y2="20.5233" gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#4BD8B5"/>
+                                            <stop offset="1" stop-color="#49D6DF"/>
+                                            </linearGradient>
+                                            </defs>
+                                        </g>
+                                    </symbol>
+                                </svg>
+                                <svg class="placeholder-img" >
+                                    <use xlink:href="#placeholder"></use>
+                                </svg>
+                                <img class="placeholder__img"src="../../assets/images/placeholder/eagle.png" alt="panda">
+                            </div>
+                            <div class="geogr-map__placeholder placeholder_panda" title="Panda" >
+                                <svg  visibility="hidden" height="0" width="0" position="absolute">
+                                    <symbol id="placeholder" viewBox="0 0 67 94">
+                                        <g>
+                                            <path d="M33.6913 0.150391C15.4582 0.150391 0.625 14.9853 0.625 33.2206C0.625 50.8607 30.8554 91.051 32.1431 92.7551C32.5049 93.2415 33.0846 93.5254 33.6915 93.5254C34.2983 93.5254 34.878 93.2415 35.2398 92.7551C36.5274 91.051 66.7579 50.8609 66.7579 33.2206C66.7576 14.9853 51.9244 0.150391 33.6913 0.150391ZM33.6913 50.7285C24.0398 50.7285 16.1856 42.8733 16.1856 33.2206C16.1856 23.568 24.0398 15.7128 33.6913 15.7128C43.3428 15.7128 51.197 23.568 51.197 33.2206C51.197 42.8733 43.3428 50.7285 33.6913 50.7285Z" />
+                                            <defs>
+                                            <linearGradient id="paint0_linear" x1="-11.7233" y1="0.15039" x2="83.0362" y2="20.5233" gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#4BD8B5"/>
+                                            <stop offset="1" stop-color="#49D6DF"/>
+                                            </linearGradient>
+                                            </defs>
+                                        </g>
+                                    </symbol>
+                                </svg>
+                                <svg class="placeholder-img placeholder_active-img" >
+                                    <use xlink:href="#placeholder"></use>
+                                </svg>
+                                <img class="placeholder__img"src="../../assets/images/placeholder/panda.png" alt="panda">
+                            </div>
+                            <div class="geogr-map__placeholder placeholder_gorilla" title="Gorilla">
+                                <svg  visibility="hidden" height="0" width="0" position="absolute">
+                                    <symbol id="placeholder" viewBox="0 0 67 94">
+                                        <g>
+                                            <path d="M33.6913 0.150391C15.4582 0.150391 0.625 14.9853 0.625 33.2206C0.625 50.8607 30.8554 91.051 32.1431 92.7551C32.5049 93.2415 33.0846 93.5254 33.6915 93.5254C34.2983 93.5254 34.878 93.2415 35.2398 92.7551C36.5274 91.051 66.7579 50.8609 66.7579 33.2206C66.7576 14.9853 51.9244 0.150391 33.6913 0.150391ZM33.6913 50.7285C24.0398 50.7285 16.1856 42.8733 16.1856 33.2206C16.1856 23.568 24.0398 15.7128 33.6913 15.7128C43.3428 15.7128 51.197 23.568 51.197 33.2206C51.197 42.8733 43.3428 50.7285 33.6913 50.7285Z" />
+                                            <defs>
+                                            <linearGradient id="paint0_linear" x1="-11.7233" y1="0.15039" x2="83.0362" y2="20.5233" gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#4BD8B5"/>
+                                            <stop offset="1" stop-color="#49D6DF"/>
+                                            </linearGradient>
+                                            </defs>
+                                        </g>
+                                    </symbol>
+                                </svg>
+                                <svg class="placeholder-img" >
+                                    <use xlink:href="#placeholder"></use>
+                                </svg>
+                                <img class="placeholder__img"src="../../assets/images/placeholder/gorilla.png" alt="gorilla">
+                            </div>
+                            <div class="geogr-map__placeholder placeholder_alligator" title="Alligator" >
+                                <svg  visibility="hidden" height="0" width="0" position="absolute">
+                                    <symbol id="placeholder" viewBox="0 0 67 94">
+                                        <g>
+                                            <path d="M33.6913 0.150391C15.4582 0.150391 0.625 14.9853 0.625 33.2206C0.625 50.8607 30.8554 91.051 32.1431 92.7551C32.5049 93.2415 33.0846 93.5254 33.6915 93.5254C34.2983 93.5254 34.878 93.2415 35.2398 92.7551C36.5274 91.051 66.7579 50.8609 66.7579 33.2206C66.7576 14.9853 51.9244 0.150391 33.6913 0.150391ZM33.6913 50.7285C24.0398 50.7285 16.1856 42.8733 16.1856 33.2206C16.1856 23.568 24.0398 15.7128 33.6913 15.7128C43.3428 15.7128 51.197 23.568 51.197 33.2206C51.197 42.8733 43.3428 50.7285 33.6913 50.7285Z" />
+                                            <defs>
+                                            <linearGradient id="paint0_linear" x1="-11.7233" y1="0.15039" x2="83.0362" y2="20.5233" gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#4BD8B5"/>
+                                            <stop offset="1" stop-color="#49D6DF"/>
+                                            </linearGradient>
+                                            </defs>
+                                        </g>
+                                    </symbol>
+                                </svg>
+                                <svg class="placeholder-img" >
+                                    <use xlink:href="#placeholder"></use>
+                                </svg>
+                                <img class="placeholder__img"src="../../assets/images/placeholder/alligator.png" alt="alligator">
+                            </div>
+                        </div>
+                    </div>
+                        <a class="button map__button" href="../zoos/panda/panda.html"><img src="../../assets/icons/how-it-works__button.png" alt="map-button">watch online</a>
+                    </div>     
+            </section>
+        </main>
+        <footer class="footer">
+            <div class="footer__wrapper">
+                <div class="footer__info">
+                        <div class="footer__logo_and_nav">
+                            <h2 class="footer__logo"><a class="logo__title"  href="../landing/index.html">zoo  <span class="logo__subtitle">online</span></a></h2>
+                            <nav class="footer__nav">
+                                <ul class="nav__items footer__items">
+                                    <li><a class="nav__link footer-nav__link" href="../landing/index.html">About</a></li>
+                                    <li><a class="nav__link footer-nav__link" href="../zoos/panda/panda.html">Zoos</a></li>
+                                    <li><a class="nav__link footer-nav__link" href="../map/map.html">Map</a></li>
+                                    <li><a class="nav__link footer-nav__link" href="https://www.figma.com/file/HKt5Nlx0jghQtJp6jW9q8F/zooApp?node-id=155%3A1736" target="_blank">Design</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    <div class="footer__contact">
+                        <form class="footer__form"  id="contact-us">
+                            <h3 class="contact-us__title">Contact us</h3>
+                            <input type="text" required id=""  class="contact-us__field" placeholder="Name">
+                            <input type="email" required  id="" class="contact-us__field" placeholder="Email">
+                            <fieldset class="fieldset__message">
+                                <legend>Please enter your message </legend>
+                                <textarea required maxlength="280" class="contact-us__message"></textarea>
+                            </fieldset>
+                                <div class="checkbox__wrapper">
+                                    <input type="checkbox" required class="contact-us__checkbox">
+                                     <label class="checkbox__text" for="contact-us__checkbox">I agree to the processing of Personal Data</label>
+                                </div>
+                                <button type="submit" class="button contact-us__button">send <img src="../../assets/images/contact-us__arrow.png" alt="arrow"></button>
+                        </form>
+                    <div class="footer__adress">
+                        <h3 class="adress__title">ZOO Online Centre</h3>
+                        <address class="adress">
+                            <p class="adress__text">132, Address District, Street Open Daily 10:00 am - 5:00 pm</p>
+                            <a class="adress__contact" href="tel:7021633433">T(702) 163-3433</a>
+                            <a class="adress__contact" href="mailto:zoo.online@gmail.com">zoo.online@gmail.com</a></p>
+                        </address>
+                        <div class="social">
+                            <ul class="social__items footer__social">
+                                <li class="social__link footer__link"><a href="https://www.instagram.com" target="_blank"><img src="../../assets/icons/inst.png"></a></li>
+                                <li class="social__link footer__link"><a href="https://twitter.com" target="_blank"><img src="../../assets/icons/twitter.png"></a></li>
+                                <li class="social__link footer__link"><a href="https://www.vk.com" target="_blank"><img src="../../assets/icons/vk.png"></a></li>
+                                <li class="social__link footer__link"><a href="https://www.youtube.com" target="_blank"><img src="../../assets/icons/youtube.png"></a></li>
+                            </ul>
+                        </div>
+                        <button  class="button footer__button footer__button_second">donate for volunteers</button>  
+                    </div>
+                    
+                </div>
+                    <button  class="button footer__button footer__button_first">donate for volunteers</button>  
+                </div> 
+                <div class="footer__copyright">
+                    <p class="copyright__text">©Noora Sagnayeva</p>
+                    <p class="copyright__text">©RSSchool and ©Yem Digital 2021</p>
+                </div>
+            </div>
+        </footer>  
+    </body>
+</html>
