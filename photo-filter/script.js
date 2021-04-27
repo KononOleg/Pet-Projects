@@ -60,9 +60,6 @@ function getImage() {
 btnnext.addEventListener('click', getImage);
 
 
-
-
-
 const fileInput = document.querySelector('input[type="file"]');
 
 fileInput.addEventListener('change', function(event) {
