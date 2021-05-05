@@ -607,10 +607,10 @@ input:checked + .slider:before {
 @media  (max-width:1330px){
 
     .slider__wrapper{
-        width: 710px;
+        width: 720px;
     }
     .map__slider{
-        width: 780px;
+        width: 790px;
         margin-bottom: 30px;
     }
     .map__progress-bar{
