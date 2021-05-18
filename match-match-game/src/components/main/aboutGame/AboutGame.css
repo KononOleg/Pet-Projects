@@ -1,0 +1,14 @@
+.aboutGame {
+  margin: 0 auto;
+  width: 1000px;
+  height: 800px;
+  background: rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text {
+  font-size: 40px;
+  color: black;
+}

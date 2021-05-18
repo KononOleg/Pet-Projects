@@ -1,0 +1,6 @@
+.cards-field {
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  display: grid;
+}

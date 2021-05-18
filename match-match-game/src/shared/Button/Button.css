@@ -1,0 +1,19 @@
+button {
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.reg__button {
+  background-color: #ffffff;
+  height: 36px;
+  color: #2196f3;
+  text-transform: uppercase;
+  padding: 0 16px;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+}

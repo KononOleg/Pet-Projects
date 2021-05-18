@@ -1,0 +1,286 @@
+body,
+p {
+  margin: 0;
+}
+
+.header {
+  background-color: #2196f3;
+  color: #ffffff;
+}
+.header__wrapper {
+  max-width: 1440px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+.logo__title {
+  display: flex;
+  flex-direction: column;
+  font-family: "Roboto";
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 16px;
+  width: 80px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.logo__subtitle {
+  background-color: #ffffff;
+  color: #2196f3;
+}
+
+.button {
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.nav__button {
+  width: 96px;
+  height: 64px;
+  background-color: transparent;
+  color: #ffffff;
+  font-family: "Roboto";
+  font-size: 12px;
+  line-height: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.header__nav {
+  display: flex;
+  list-style-type: none;
+  padding-inline-start: 0px;
+}
+
+.button__img {
+  width: 20px;
+  height: 20px;
+  margin-bottom: 5px;
+}
+
+.header__reg {
+  display: flex;
+}
+
+.GameSetting {
+  margin: 0 auto;
+  width: 1000px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffff;
+  box-shadow: 0px 6px 5px rgba(0, 0, 0, 0.24), 0px 9px 18px rgba(0, 0, 0, 0.18);
+}
+select {
+  width: 256px;
+}
+
+.game {
+  display: flex;
+
+  align-items: center;
+  flex-direction: column;
+
+  background-color: rgba(0, 0, 0, 0.05);
+  box-sizing: content-box;
+  padding-top: 20px;
+}
+
+.cards-field {
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  display: grid;
+}
+
+.card__container {
+  width: 170px;
+  height: 170px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  perspective: 25rem;
+}
+
+.card {
+  position: relative;
+  width: 170px;
+  height: 240px;
+  cursor: pointer;
+
+  transform-style: preserve-3d;
+  transform-origin: right;
+  transition: all 0.5s;
+}
+.card_flip > .card {
+  transform: rotateY(180deg) translateX(-100%);
+  transform-origin: left;
+}
+.card__front,
+.card__back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+.card__front {
+  background-size: cover;
+}
+
+.card__back {
+  background-color: chocolate;
+  transform: rotateY(180deg);
+}
+
+.timer {
+  width: 255px;
+  height: 65px;
+  background-color: beige;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.count {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 30px;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.winScreen {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.winScreen__wrapper {
+  width: 360px;
+  height: 110px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -50%);
+  padding: 8px;
+}
+.winScreen_text {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.25px;
+  margin-top: 20px;
+  margin-bottom: 8px;
+}
+
+button {
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.reg__button {
+  background-color: #ffffff;
+  height: 36px;
+  color: #2196f3;
+  text-transform: uppercase;
+  padding: 0 16px;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.aboutGame {
+  margin: 0 auto;
+  width: 1000px;
+  height: 800px;
+  background: rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text {
+  font-size: 40px;
+  color: black;
+}
+
+.main {
+  background-color: #ffff;
+  display: flex;
+  justify-content: center;
+  padding-top: 35px;
+}
+
+.registration {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.reg__wrapper {
+  top: 50%;
+  left: 50%;
+  position: relative;
+  width: 640px;
+  height: 460px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  transform: translate(-50%, -50%);
+}
+
+.inputFieldset {
+  width: 330px;
+  height: 56px;
+  box-sizing: border-box;
+}
+
+input[type="text"] {
+  width: 100%;
+  height: 100%;
+}
+
+.inputSubmit {
+  background-color: #ffffff;
+  width: 110px;
+  height: 36px;
+  color: #ffffff;
+  background-color: #2196f3;
+  text-transform: uppercase;
+  padding: 0 16px;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+}
+
