@@ -1,0 +1,211 @@
+body,
+p {
+  margin: 0;
+}
+
+.header {
+  background-color: #2196f3;
+  color: #ffffff;
+}
+.header__wrapper {
+  max-width: 1440px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+.logo__title {
+  display: flex;
+  flex-direction: column;
+  font-family: "Roboto";
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 16px;
+  width: 80px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.logo__subtitle {
+  background-color: #ffffff;
+  color: #2196f3;
+}
+
+.button {
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.nav__button {
+  width: 96px;
+  height: 64px;
+  background-color: transparent;
+  color: #ffffff;
+  font-family: "Roboto";
+  font-size: 12px;
+  line-height: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.header__nav {
+  display: flex;
+  list-style-type: none;
+  padding-inline-start: 0px;
+}
+
+.button__img {
+  width: 20px;
+  height: 20px;
+  margin-bottom: 5px;
+}
+
+.header__reg {
+  display: flex;
+}
+
+.GameSetting {
+  margin: 0 auto;
+  width: 1000px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  background-color: blueviolet;
+}
+
+.game {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.cards-field {
+  background-color: rgba(0, 0, 0, 0.05);
+
+  justify-content: center;
+  align-items: center;
+  padding: 100px;
+  display: grid;
+}
+
+.card__container {
+  width: 170px;
+  height: 170px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  perspective: 25rem;
+}
+
+.card {
+  position: relative;
+  width: 170px;
+  height: 170px;
+  cursor: pointer;
+
+  transform-style: preserve-3d;
+  transform-origin: right;
+  transition: all 0.5s;
+}
+.card_flip > .card {
+  transform: rotateY(180deg) translateX(-100%);
+  transform-origin: left;
+}
+.card__front,
+.card__back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+.card__front {
+  background-size: cover;
+}
+
+.card__back {
+  background-color: chocolate;
+  transform: rotateY(180deg);
+}
+
+.timer {
+  width: 100px;
+  height: 50px;
+  background-color: beige;
+}
+
+.winScreen {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.winScreen__wrapper {
+  width: 360px;
+  height: 110px;
+  position: relative;
+  top: 10%;
+  left: 30%;
+  background-color: wheat;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.reg__button {
+  background-color: #ffffff;
+  height: 36px;
+  color: #2196f3;
+  text-transform: uppercase;
+  padding: 0 16px;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.main {
+  height: calc(100vh - 64px);
+  background-color: aqua;
+}
+
+.registration {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.reg__wrapper {
+  top: 30%;
+  left: 40%;
+  position: relative;
+  width: 640px;
+  height: 460px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
