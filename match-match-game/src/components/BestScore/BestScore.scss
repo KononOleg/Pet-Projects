@@ -1,0 +1,62 @@
+@import "../../styles.scss";
+.BestScore__wrapper {
+  width: 1000px;
+  height: 800px;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.05);
+  padding: 50px;
+  box-sizing: border-box;
+  color: $black;
+}
+.score__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(33, 33, 33, 0.08);
+  padding: 7px 0;
+}
+.BestScore__title {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+
+  letter-spacing: 0.15px;
+
+  color: $black;
+}
+.player__info {
+  display: flex;
+  gap: 15px;
+}
+.info__name {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+
+  letter-spacing: 0.1px;
+}
+
+.info__email {
+  font-size: 12px;
+  line-height: 15px;
+
+  letter-spacing: 0.4px;
+}
+
+.info__score {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+
+  letter-spacing: 0.1px;
+}
+.info__score span {
+  color: $blue;
+  margin: 0 8px;
+}
+
+.player__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}

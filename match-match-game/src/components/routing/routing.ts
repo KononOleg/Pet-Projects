@@ -1,6 +1,3 @@
-import { GameSetting } from "../GameSetting/GameSetting";
-import { Game } from "../Game/game";
-import { AboutGame } from "../main/aboutGame/AboutGame";
 import { Main } from "../main/main";
 
 export class Routing {
@@ -16,17 +13,9 @@ export class Routing {
 
   private main: Main = new Main();
 
-  public readonly items = {
-    default: AboutGame,
-    aboutGame: AboutGame,
-    game: Game,
-    setting: GameSetting,
-  };
-
-  render(item: any) {
-    //  ANYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY
+  render<T>(item: T) {
     this.main.element.innerHTML = "";
-    const about = new item();
-    this.main.element.prepend(about.element);
+    const page = eval("new item()");
+    this.main.element.prepend(page.element);
   }
 }

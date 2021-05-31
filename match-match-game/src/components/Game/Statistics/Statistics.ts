@@ -2,12 +2,10 @@ export class Statistics {
   public static numberCompar: number = 0;
   public static numberErrorCompar: number = 0;
   public static Time: number = 0;
-  private static Score: number;
 
-  public static setScore() {
-    this.Score =
-      (Statistics.numberCompar - Statistics.numberErrorCompar) * 100 -
-      Statistics.Time / 10;
+  public static getScore() {
+    let score = (Statistics.numberCompar - Statistics.numberErrorCompar) * 100 - Statistics.Time * 10;
+    return score > 0 ? score : 0;
   }
 
   public static resetStatistics() {

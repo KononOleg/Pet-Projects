@@ -1,21 +1,14 @@
-import "./cards-field.css";
+import "./cards-field.scss";
 import { Basecomponent } from "../../../shared/base-component";
 import { Card } from "../card/card";
-import { Timer } from "../../Timer/Timer";
 import { Setting } from "../../Setting";
 import { delay } from "../../../shared/delay";
-import { GameSetting } from "../../GameSetting/GameSetting";
 
 export class CardsField extends Basecomponent {
   private cards: Card[] = [];
   constructor() {
     super("div", ["cards-field"]);
-    this.element.setAttribute(
-      "style",
-      `grid-template-rows:repeat(${
-        Setting.Difficulty / 2
-      },250px); grid-template-columns:repeat(${Setting.Difficulty * 2},180px)`
-    );
+    this.element.setAttribute("style", `grid-template-rows:repeat(${Setting.countRows},auto); grid-template-columns:repeat(${Setting.countColumns},auto)`);
   }
 
   clear() {

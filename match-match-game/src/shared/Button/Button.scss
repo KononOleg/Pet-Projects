@@ -1,0 +1,19 @@
+@import "../../styles.scss";
+button {
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  font-family: "Roboto";
+  font-style: normal;
+}
+
+.reg__button {
+  background-color: $white;
+  height: 36px;
+  color: $blue;
+  text-transform: uppercase;
+  padding: 0 16px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+}

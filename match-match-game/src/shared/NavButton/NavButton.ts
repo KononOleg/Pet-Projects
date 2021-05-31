@@ -1,10 +1,10 @@
+import "./NavButton.scss";
 import { Basecomponent } from "../base-component";
-
 export class NavButton extends Basecomponent {
-  constructor(readonly text: string) {
+  constructor(readonly text: string, readonly src: string) {
     super("button", ["button", "nav__button"]);
     this.element.innerHTML = `
-        <div class="button__img"></div>
+        <img src="${src}" class="button__img">
             ${text}
         `;
   }

@@ -8,6 +8,8 @@ import { Timer } from "../Timer/Timer";
 import { Statistics } from "./Statistics/Statistics";
 import { Setting } from "../Setting";
 import { WinScreen } from "./WinScreen/WinScreen";
+import { Database } from "../Database/Database";
+import { Player } from "../registration/Player/Player";
 
 export class Game extends Basecomponent {
   private readonly cardsField: CardsField;
@@ -26,13 +28,9 @@ export class Game extends Basecomponent {
   async start() {
     const res = await fetch("../images.json");
     const categories: ImageCategoryModel[] = await res.json();
-    const cat = categories.find(
-      (images) => images.category === Setting.typeCards
-    );
+    const cat = categories.find((images) => images.category === Setting.typeCards);
     if (!cat) throw Error("error");
-    const images = this.RandomImages(cat.images).map(
-      (name) => `${cat.category}/${name}`
-    );
+    const images = this.RandomImages(cat.images).map((name) => `${cat.category}/${name}`);
     this.newGame(images);
   }
   newGame(images: string[]) {
@@ -62,15 +60,20 @@ export class Game extends Basecomponent {
       return;
     }
     if (this.activeCard.image != card.image) {
+      this.activeCard.wrondCard();
+      card.wrondCard();
       await delay(1000);
       await Promise.all([this.activeCard.flipToBack(), card.flipToBack()]);
       Statistics.numberErrorCompar++;
     } else {
       Statistics.numberCompar++;
-      if (Statistics.numberCompar === Setting.Difficulty) {
+      this.activeCard.rightCard();
+      card.rightCard();
+      if (Statistics.numberCompar === (Setting.countRows * Setting.countColumns) / 2) {
         Timer.StopTimer();
-        Statistics.setScore();
+        Player.Score = Statistics.getScore();
         this.winScreen = new WinScreen();
+        Database.getInstance().add();
       }
     }
     this.activeCard = undefined;
@@ -80,9 +83,9 @@ export class Game extends Basecomponent {
   RandomImages(images: string[]): string[] {
     let arr: number[] = [];
     let randomArr: string[] = [];
-    let cards = Math.pow(2, Setting.Difficulty - 1);
+    let cards = (Setting.countColumns * Setting.countRows) / 2;
     while (arr.length < cards) {
-      let randomNumber = Math.floor(Math.random() * cards);
+      let randomNumber = Math.floor(Math.random() * images.length);
       let found = false;
       for (let i = 0; i < arr.length; i++) {
         if (arr[i] === randomNumber) {

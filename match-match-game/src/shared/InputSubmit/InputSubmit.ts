@@ -1,4 +1,4 @@
-import "./inputSubmit.css";
+import "./inputSubmit.scss";
 import { Basecomponent } from "../base-component";
 
 export class inputSubmit extends Basecomponent {

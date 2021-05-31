@@ -1,20 +1,23 @@
-import "./card.css";
+import "./card.scss";
 import { Basecomponent } from "../../../shared/base-component";
-
-const FLIP_CLASS = "card_flip";
+import { Setting } from "../../Setting";
 
 export class Card extends Basecomponent {
   isFliped = false;
 
+  private card: Basecomponent = new Basecomponent("div", ["card"]);
+  private plug: Basecomponent = new Basecomponent("div", ["plug"]);
+
   constructor(readonly image: string) {
     super("div", ["card__container"]);
+    this.card.element.setAttribute("style", `width:${32 / Setting.countRows}vw`);
+    this.element.appendChild(this.card.element);
 
-    this.element.innerHTML = `
-            <div class="card">
+    this.card.element.innerHTML = `
                 <div class="card__front" style="background-image: url('./images/${image}')"></div>
                 <div class="card__back"></div>
-            </div>
         `;
+    this.card.element.appendChild(this.plug.element);
   }
 
   flipToBack() {
@@ -29,10 +32,18 @@ export class Card extends Basecomponent {
 
   private flip(isFront = false): Promise<void> {
     return new Promise((resolve) => {
-      this.element.classList.toggle(FLIP_CLASS, isFront);
+      this.element.classList.toggle("card_flip", isFront);
+      this.plug.element.classList.remove("card_wrong");
       this.element.addEventListener("transitionend", () => resolve(), {
         once: true,
       });
     });
+  }
+
+  rightCard() {
+    this.plug.element.classList.add("card_right");
+  }
+  wrondCard() {
+    this.plug.element.classList.add("card_wrong");
   }
 }

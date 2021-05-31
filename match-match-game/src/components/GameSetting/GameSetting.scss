@@ -1,0 +1,29 @@
+@import "../../styles.scss";
+
+.GameSetting {
+  margin: 0 auto;
+  width: 1000px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  background-color: $white;
+  box-shadow: 0px 6px 5px $transparent_black, 0px 9px 18px $transparent_black;
+  padding: 30px;
+}
+select {
+  width: 256px;
+  height: 40px;
+  outline: none;
+  border: 0;
+  border-bottom: 1px solid $transparent_black;
+  margin-bottom: 20px;
+}
+.select__title {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+
+  letter-spacing: 0.15px;
+
+  color: $black;
+}

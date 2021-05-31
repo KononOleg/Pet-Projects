@@ -1,0 +1,36 @@
+@import "../../styles.scss";
+.button {
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.nav__button {
+  width: 96px;
+  height: 64px;
+  background-color: transparent;
+  color: $white;
+  font-family: "Roboto";
+  font-style: normal;
+  font-size: 12px;
+  line-height: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.button__img {
+  width: 20px;
+  height: 20px;
+  margin-bottom: 5px;
+}
+
+.active {
+  background: $active_blue;
+  pointer-events: none;
+}
+
+.disable {
+  pointer-events: none;
+}

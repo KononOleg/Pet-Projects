@@ -1,0 +1,56 @@
+@import "../../../styles.scss";
+.card__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 100rem;
+}
+
+.card {
+  position: relative;
+
+  aspect-ratio: 1/1;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transform-origin: right;
+  transition: all 0.5s;
+}
+.card_flip > .card {
+  transform: rotateY(180deg) translateX(-100%);
+  transform-origin: left;
+}
+.card__front,
+.card__back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+.card__front {
+  background-size: 100% 100%;
+  background-color: white;
+  border-radius: 5%;
+}
+
+.card__back {
+  background: url("../../../assets/images/cardbg.png") no-repeat;
+  background-size: cover;
+  transform: rotateY(180deg);
+  border-radius: 5%;
+}
+
+.plug {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  z-index: 10;
+  border-radius: 5%;
+}
+.card_right {
+  background: $card_green;
+}
+.card_wrong {
+  background: $card_red;
+}
