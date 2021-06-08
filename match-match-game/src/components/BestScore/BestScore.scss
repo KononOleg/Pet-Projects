@@ -3,7 +3,7 @@
   width: 1000px;
   height: 800px;
   border-radius: 5px;
-  background: rgba(0, 0, 0, 0.05);
+  background: $transparent_black;
   padding: 50px;
   box-sizing: border-box;
   color: $black;
@@ -12,8 +12,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid rgba(33, 33, 33, 0.08);
-  padding: 7px 0;
+  border-bottom: 1px solid $black;
+  padding: 3px 0;
 }
 .BestScore__title {
   font-weight: 500;
@@ -32,14 +32,14 @@
   font-weight: 500;
   font-size: 14px;
   line-height: 21px;
-
+  margin: 0;
   letter-spacing: 0.1px;
 }
 
 .info__email {
   font-size: 12px;
   line-height: 15px;
-
+  margin: 0;
   letter-spacing: 0.4px;
 }
 
@@ -47,7 +47,7 @@
   font-weight: 500;
   font-size: 14px;
   line-height: 21px;
-
+  margin: 0;
   letter-spacing: 0.1px;
 }
 .info__score span {

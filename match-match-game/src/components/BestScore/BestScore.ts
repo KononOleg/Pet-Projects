@@ -1,8 +1,10 @@
 import "./BestScore.scss";
 import { Basecomponent } from "../../shared/base-component";
 import { Database } from "../Database/Database";
+
 export class BestScore extends Basecomponent {
   private bestscoreTitle: Basecomponent = new Basecomponent("h2", ["BestScore__title"]);
+
   constructor() {
     super("div", ["BestScore__wrapper"]);
     this.element.appendChild(this.bestscoreTitle.element);
@@ -11,7 +13,7 @@ export class BestScore extends Basecomponent {
       .show()
       .then((scores) => {
         scores.forEach((arr) => {
-          let score = document.createElement("div");
+          const score = document.createElement("div");
           score.classList.add("score__wrapper");
           this.element.appendChild(score);
           score.innerHTML = `

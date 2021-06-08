@@ -1,9 +1,8 @@
 @import "../../styles.scss";
-button {
+.button {
   border: 0;
-  padding: 0;
   cursor: pointer;
-  font-family: "Roboto";
+  font-family: $Roboto;
   font-style: normal;
 }
 

@@ -8,8 +8,11 @@ import { BestScore } from "../../BestScore/BestScore";
 
 export class WinScreen extends Basecomponent {
   private winScreen_wrapper: Basecomponent = new Basecomponent("div", ["winScreen__wrapper"]);
+
   private winScreen_text: Basecomponent = new Basecomponent("p", ["winScreen_text"]);
+
   private bnt: Button = new Button("ok", "reg__button");
+
   constructor() {
     super("div", ["winScreen"]);
     document.body.appendChild(this.element);

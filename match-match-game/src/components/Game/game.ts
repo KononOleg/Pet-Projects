@@ -1,22 +1,28 @@
-import "./game.css";
-import { Basecomponent } from "../../shared/base-component";
+import "./game.scss";
 import { CardsField } from "./CardsField/cards-field";
+import { Statistics } from "./Statistics/Statistics";
 import { Card } from "./card/card";
-import { delay } from "../../shared/delay";
 import { ImageCategoryModel } from "./models/image-category-model";
 import { Timer } from "../Timer/Timer";
-import { Statistics } from "./Statistics/Statistics";
 import { Setting } from "../Setting";
-import { WinScreen } from "./WinScreen/WinScreen";
 import { Database } from "../Database/Database";
 import { Player } from "../registration/Player/Player";
+import { Basecomponent } from "../../shared/base-component";
+import { delay } from "../../shared/delay";
+import { WinScreen } from "./winscreen/WinScreen";
+
+const PAIR_CARDS = 2,
+  MID_POINT = 0.5;
 
 export class Game extends Basecomponent {
   private readonly cardsField: CardsField;
+
   private activeCard?: Card;
+
   private isAnimation = false;
+
   private timer: Timer = new Timer();
-  private winScreen!: WinScreen;
+
   constructor() {
     super("div", ["game"]);
     this.cardsField = new CardsField();
@@ -25,7 +31,7 @@ export class Game extends Basecomponent {
     this.start();
   }
 
-  async start() {
+  async start(): Promise<void> {
     const res = await fetch("../images.json");
     const categories: ImageCategoryModel[] = await res.json();
     const cat = categories.find((images) => images.category === Setting.typeCards);
@@ -33,13 +39,14 @@ export class Game extends Basecomponent {
     const images = this.RandomImages(cat.images).map((name) => `${cat.category}/${name}`);
     this.newGame(images);
   }
-  newGame(images: string[]) {
+
+  newGame(images: string[]): void {
     this.cardsField.clear();
     Statistics.resetStatistics();
     const cards = images
       .concat(images)
       .map((url) => new Card(url))
-      .sort(() => Math.random() - 0.5);
+      .sort(() => Math.random() - MID_POINT);
 
     cards.forEach((card) => {
       card.element.addEventListener("click", () => this.cardHandler(card));
@@ -49,7 +56,7 @@ export class Game extends Basecomponent {
     this.cardsField.addCards(cards);
   }
 
-  private async cardHandler(card: Card) {
+  private async cardHandler(card: Card): Promise<void> {
     if (this.isAnimation) return;
     if (!card.isFliped) return;
     this.isAnimation = true;
@@ -59,7 +66,7 @@ export class Game extends Basecomponent {
       this.isAnimation = false;
       return;
     }
-    if (this.activeCard.image != card.image) {
+    if (this.activeCard.image !== card.image) {
       this.activeCard.wrondCard();
       card.wrondCard();
       await delay(1000);
@@ -69,10 +76,10 @@ export class Game extends Basecomponent {
       Statistics.numberCompar++;
       this.activeCard.rightCard();
       card.rightCard();
-      if (Statistics.numberCompar === (Setting.countRows * Setting.countColumns) / 2) {
+      if (Statistics.numberCompar === (Setting.countRows * Setting.countColumns) / PAIR_CARDS) {
         Timer.StopTimer();
         Player.Score = Statistics.getScore();
-        this.winScreen = new WinScreen();
+        const winScreen = new WinScreen();
         Database.getInstance().add();
       }
     }
@@ -80,12 +87,12 @@ export class Game extends Basecomponent {
     this.isAnimation = false;
   }
 
-  RandomImages(images: string[]): string[] {
-    let arr: number[] = [];
-    let randomArr: string[] = [];
-    let cards = (Setting.countColumns * Setting.countRows) / 2;
+  RandomImages = (images: string[]): string[] => {
+    const arr: number[] = [];
+    const randomArr: string[] = [];
+    const cards = (Setting.countColumns * Setting.countRows) / PAIR_CARDS;
     while (arr.length < cards) {
-      let randomNumber = Math.floor(Math.random() * images.length);
+      const randomNumber = Math.floor(Math.random() * images.length);
       let found = false;
       for (let i = 0; i < arr.length; i++) {
         if (arr[i] === randomNumber) {
@@ -98,5 +105,5 @@ export class Game extends Basecomponent {
       }
     }
     return randomArr;
-  }
+  };
 }

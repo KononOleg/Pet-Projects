@@ -1,3 +1,4 @@
+@import "../../styles.scss";
 .game {
   min-width: 1000px;
   min-height: 100%;
@@ -7,6 +8,6 @@
   align-items: center;
   flex-direction: column;
 
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: $transparent_black;
   padding-top: 20px;
 }

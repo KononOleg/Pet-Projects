@@ -6,6 +6,7 @@ export class Card extends Basecomponent {
   isFliped = false;
 
   private card: Basecomponent = new Basecomponent("div", ["card"]);
+
   private plug: Basecomponent = new Basecomponent("div", ["plug"]);
 
   constructor(readonly image: string) {
@@ -20,12 +21,12 @@ export class Card extends Basecomponent {
     this.card.element.appendChild(this.plug.element);
   }
 
-  flipToBack() {
+  flipToBack(): Promise<void> {
     this.isFliped = true;
     return this.flip(true);
   }
 
-  flipToFront() {
+  flipToFront(): Promise<void> {
     this.isFliped = false;
     return this.flip(false);
   }
@@ -40,10 +41,11 @@ export class Card extends Basecomponent {
     });
   }
 
-  rightCard() {
+  rightCard(): void {
     this.plug.element.classList.add("card_right");
   }
-  wrondCard() {
+
+  wrondCard(): void {
     this.plug.element.classList.add("card_wrong");
   }
 }

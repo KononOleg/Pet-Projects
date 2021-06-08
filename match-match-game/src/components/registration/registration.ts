@@ -4,24 +4,38 @@ import { InputField } from "../../shared/InputField/InputField";
 import { Header } from "../header/header";
 import { Button } from "../../shared/Button/Button";
 import { Player } from "./Player/Player";
+
 let isValidFirstName = false,
   isValidLastName = false,
   isValidEmail = false;
+const MAX_LENGTH = 30;
 export class Registration extends Basecomponent {
   private reg__wrapper: Basecomponent = new Basecomponent("div", ["reg__wrapper"]);
+
   private reg__form: Basecomponent = new Basecomponent("form", ["reg__form"]);
 
   private inputFirstName: InputField = new InputField("First Name");
+
   private inputLastName: InputField = new InputField("Last Name");
+
   private inputEmail: InputField = new InputField("Email");
+
   private avatar = document.createElement("img");
+
   private submit: Button = new Button("add user", "inputSubmit", "submit");
+
   private cancel: Button = new Button("cancel", "inputCancel", "button");
+
   private reg_title: Basecomponent = new Basecomponent("h2", ["reg__title"]);
+
   private button_wrapper: Basecomponent = new Basecomponent("div", ["button__wrapper"]);
+
   private avatar_edit: Basecomponent = new Basecomponent("div", ["avatar-edit"]);
+
   private fileInput = document.createElement("input");
+
   private label = document.createElement("label");
+
   constructor() {
     super("div", ["registration"]);
     this.element.appendChild(this.reg__wrapper.element);
@@ -40,10 +54,12 @@ export class Registration extends Basecomponent {
     this.fileInput.setAttribute("type", "file");
     this.fileInput.setAttribute("id", "avatar");
     this.avatar_edit.element.appendChild(this.fileInput);
+    this.fileInput.classList.add("fileInput");
     this.avatar.src = Player.Avatar;
     this.avatar.classList.add("avatar");
     this.avatar_edit.element.appendChild(this.label);
     this.label.setAttribute("for", "avatar");
+    this.label.classList.add("avatar-edit__button");
 
     this.reg__form.element.addEventListener("submit", (event: Event) => {
       event.preventDefault();
@@ -52,8 +68,8 @@ export class Registration extends Basecomponent {
       Player.LastName = this.inputLastName.getValue();
       Player.Email = this.inputEmail.getValue();
       Player.Avatar = this.avatar.src;
-      console.log(Player.Avatar);
       Header.createPlayButton();
+      this.toggleModal();
     });
     this.cancel.element.addEventListener("mousedown", (event: Event) => {
       event.preventDefault();
@@ -62,12 +78,15 @@ export class Registration extends Basecomponent {
       this.inputLastName.resetValue();
       this.inputEmail.resetValue();
       this.avatar.src = Player.Avatar;
+      this.toggleModal();
     });
 
     this.fileInput.addEventListener("change", () => {
       let file;
       if (this.fileInput.files) {
-        file = this.fileInput.files[0];
+        const { files } = this.fileInput;
+        const someIndex = 0;
+        file = files[someIndex];
 
         const reader = new FileReader();
         reader.onload = () => {
@@ -78,7 +97,7 @@ export class Registration extends Basecomponent {
     });
 
     this.inputFirstName.element.addEventListener("input", () => {
-      if (this.inputFirstName.getValue() == "") {
+      if (this.inputFirstName.getValue() === "") {
         isValidFirstName = false;
         this.setError(this.inputFirstName, "First Name cannot be blank");
       } else if (!this.isLength(this.inputFirstName)) {
@@ -94,7 +113,7 @@ export class Registration extends Basecomponent {
     });
 
     this.inputLastName.element.addEventListener("input", () => {
-      if (this.inputLastName.getValue() == "") {
+      if (this.inputLastName.getValue() === "") {
         isValidLastName = false;
         this.setError(this.inputLastName, "Last Name cannot be blank");
       } else if (!this.isLength(this.inputLastName)) {
@@ -110,7 +129,7 @@ export class Registration extends Basecomponent {
     });
 
     this.inputEmail.element.addEventListener("input", () => {
-      if (this.inputEmail.getValue() == "") {
+      if (this.inputEmail.getValue() === "") {
         isValidEmail = false;
         this.setError(this.inputEmail, "Email cannot be blank");
       } else if (!this.isLength(this.inputEmail)) {
@@ -125,33 +144,35 @@ export class Registration extends Basecomponent {
       }
     });
   }
-  setError(input: InputField, error: string) {
+
+  toggleModal = (): void => {
+    document.body.classList.toggle("modal_open");
+  };
+  setError(input: InputField, error: string): void {
     input.element.className = "inputContainer Error";
     input.SetError(error);
     this.updateDisabledButton();
   }
-  setSuccess(input: InputField) {
+
+  setSuccess(input: InputField): void {
     input.element.className = "inputContainer Success";
     this.updateDisabledButton();
   }
-  isLength(input: InputField): boolean {
-    if (input.getValue().length > 30) return false;
-    else return true;
-  }
-  updateDisabledButton() {
+
+  isLength = (input: InputField): boolean => {
+    if (input.getValue().length > MAX_LENGTH) return false;
+    return true;
+  };
+
+  updateDisabledButton(): void {
     if (isValidFirstName && isValidLastName && isValidEmail) {
       this.submit.element.classList.remove("disabled");
     } else {
       this.submit.element.classList.add("disabled");
     }
   }
-  isName(Name: InputField): boolean {
-    /* return /^\D*$/.test(Name.getValue()); */
-    /* return /\p{L}+/.test(Name.getValue()); */
-    return /^[^(~ ! @ # $ % * () _ — + = | : ; " ' ` < > , . ? / ^0-9)]*$/.test(Name.getValue());
-  }
 
-  isEmail(Email: InputField): boolean {
-    return /^((([0-9A-Za-z]{1}[-0-9A-z\.]{1,}[0-9A-Za-z]{1})|([0-9А-Яа-я]{1}[-0-9А-я\.]{1,}[0-9А-Яа-я]{1}))@([-A-Za-z]{1,}\.){1,2}[-A-Za-z]{2,})$/u.test(Email.getValue());
-  }
+  isName = (Name: InputField): boolean => /^[^(~ ! @ # $ % * () _ — + = | : ; " ' ` < > , . ? / ^0-9)]*$/.test(Name.getValue());
+
+  isEmail = (Email: InputField): boolean => /^((([0-9A-Za-z]{1}[-0-9A-z\.]{1,}[0-9A-Za-z]{1})|([0-9А-Яа-я]{1}[-0-9А-я]{1,}[0-9А-Яа-я]{1}))@([-A-Za-z]{1,}\.){1,2}[-A-Za-z]{2,})$/u.test(Email.getValue());
 }

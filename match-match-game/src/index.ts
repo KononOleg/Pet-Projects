@@ -2,7 +2,8 @@ import "./styles.scss";
 import { App } from "./components/app";
 
 window.onload = () => {
-  const appElement = document.querySelector("body");
+  const appElement = document.body;
+  appElement?.classList.add("body");
   if (!appElement) throw Error("error");
-  new App(appElement);
+  const app = new App(appElement);
 };

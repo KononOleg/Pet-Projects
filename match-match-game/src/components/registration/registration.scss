@@ -7,6 +7,9 @@
   left: 0;
   background-color: $transparent_black;
 }
+.modal_open {
+  overflow: hidden;
+}
 
 .reg__wrapper {
   top: 50%;
@@ -79,11 +82,11 @@
   display: flex;
   gap: 20px;
 }
-input[type="file"] {
+.fileInput {
   display: none;
 }
 
-.avatar-edit label {
+.avatar-edit__button {
   position: absolute;
   background: url("../../assets/icons/pencil.png") no-repeat center;
   background-size: 40% 40%;
@@ -97,6 +100,6 @@ input[type="file"] {
   box-shadow: 0px 2px 4px 0px $black;
   cursor: pointer;
 }
-.avatar-edit label:hover {
+.avatar-edit__button:hover {
   background-color: $active_white;
 }

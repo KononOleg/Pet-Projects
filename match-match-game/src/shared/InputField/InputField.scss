@@ -11,26 +11,26 @@
   position: relative;
 }
 
-.inputContainer input {
+.input {
   background-color: transparent;
   border: 0;
   outline: none;
   font-weight: normal;
   font-size: 16px;
   line-height: 24px;
-  font-family: "Roboto";
+  font-family: $Roboto;
   font-style: normal;
   letter-spacing: 0.15px;
 }
-.inputContainer label {
+.inputName {
   font-weight: normal;
   font-size: 12px;
   line-height: 16px;
   letter-spacing: 0.4px;
-  color: $transparent_black;
+  color: $title_black;
 }
 
-.inputContainer i {
+.succeessImg {
   visibility: visible;
   position: absolute;
   top: 10px;
@@ -38,12 +38,12 @@
   width: 40px;
   height: 40px;
 }
-.inputContainer.Success i {
+.succeessImg.Success {
   background: url("../../assets/icons/success.png");
 }
 
-.inputContainer small {
-  font-family: "Roboto";
+.errorText {
+  font-family: $Roboto;
   font-style: normal;
   font-weight: normal;
   color: $red;
@@ -53,6 +53,6 @@
   bottom: -15px;
   visibility: hidden;
 }
-.inputContainer.Error small {
+.errorText.Error {
   visibility: visible;
 }

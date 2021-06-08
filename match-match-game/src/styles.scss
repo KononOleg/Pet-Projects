@@ -3,21 +3,19 @@ $blue: #2196f3;
 $black: #333333;
 $card_green: rgba(10, 207, 131, 0.5);
 $card_red: rgba(242, 78, 30, 0.5);
-$transparent_black: rgba(0, 0, 0, 0.25);
+$transparent_black: rgba(0, 0, 0, 0.05);
+$title_black: rgba(0, 0, 0, 0.7);
 $disable_blue: #2195f369;
 $active_white: #f1f1f1;
 $beige: #f5f5dc;
 $red: red;
 $white_blue: #e3f2fd;
 $active_blue: rgba(30, 136, 229, 1);
+$Roboto: "Roboto";
 
-body {
+.body {
   min-height: 100vh;
   margin: 0;
-  font-family: "Roboto";
+  font-family: $Roboto;
   font-style: normal;
-}
-
-p {
-  margin: 0;
 }

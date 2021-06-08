@@ -1,14 +1,15 @@
+@import "../../../styles.scss";
 .aboutGame {
   margin: 0 auto;
   min-width: 1000px;
-  min-height: 100%;
-  background: rgba(0, 0, 0, 0.05);
+  min-height: 800px;
+  background: $transparent_black;
   padding: 30px 180px 0px 25px;
   box-sizing: border-box;
 }
 
 .text {
-  font-family: "Roboto";
+  font-family: $Roboto;
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
@@ -17,7 +18,7 @@
   display: flex;
   align-items: center;
   letter-spacing: 0.15px;
-  color: black;
+  color: $black;
 
   margin-bottom: 20px;
 }

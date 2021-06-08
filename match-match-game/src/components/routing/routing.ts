@@ -13,9 +13,9 @@ export class Routing {
 
   private main: Main = new Main();
 
-  render<T>(item: T) {
+  render = <T>(item: T): void => {
     this.main.element.innerHTML = "";
     const page = eval("new item()");
     this.main.element.prepend(page.element);
-  }
+  };
 }
