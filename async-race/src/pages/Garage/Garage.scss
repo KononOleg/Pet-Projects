@@ -1,0 +1,49 @@
+@import "../../styles.scss";
+.form {
+  height: 20px;
+  display: flex;
+  gap: 5px;
+  margin: 15px 0;
+  .color {
+    height: 20px;
+  }
+  .input {
+    border: 0;
+    border-radius: 3px;
+    box-sizing: border-box;
+    padding: 2px 5px;
+    height: 24px;
+    outline: none;
+
+    font-family: "Roboto";
+    color: $black;
+    font-size: 14px;
+    font-weight: 500;
+  }
+}
+.raceControl {
+  display: flex;
+  gap: 5px;
+}
+.cars {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.title {
+  font-family: "Roboto";
+  color: $white;
+  font-size: 28px;
+  font-weight: 700;
+}
+.subtitle {
+  font-family: "Roboto";
+  color: $white;
+  font-size: 18px;
+  font-weight: 700;
+}
+.pagin {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}

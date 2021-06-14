@@ -1,0 +1,16 @@
+@import "../../../styles.scss";
+.winScreenModal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.winScreen__text {
+  color: $yellow;
+  font-family: $Roboto;
+  font-size: 76px;
+  font-weight: 900;
+  text-shadow: 10px 0px 20px $red;
+}

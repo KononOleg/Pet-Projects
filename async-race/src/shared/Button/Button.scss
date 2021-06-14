@@ -1,0 +1,38 @@
+@import "../../styles.scss";
+.button {
+  cursor: pointer;
+  border: 0;
+  outline: none;
+  text-transform: uppercase;
+  font-family: $Roboto;
+  font-size: 14px;
+  font-weight: 700;
+  transition: 0.2s;
+}
+.generalButton,
+.controlButton {
+  padding: 2px 15px;
+  border-radius: 2px;
+  color: $black;
+}
+.controlButton {
+  background-color: $green;
+  box-shadow: 0px 4px 4px 0px $darkgreen;
+}
+.generalButton {
+  background-color: $lightblue;
+  box-shadow: 0px 4px 4px 0px $dodgerblue;
+}
+
+.controlButton:hover,
+.generalButton:hover {
+  transform: translateY(4px);
+  box-shadow: 0px 0px 0px 0px transparent;
+}
+.controlButton:disabled,
+.generalButton:disabled {
+  cursor: default;
+  background-color: $grey;
+  box-shadow: 0px 4px 4px 0px $grey;
+  pointer-events: none;
+}

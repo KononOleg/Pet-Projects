@@ -1,0 +1,29 @@
+@import "../../styles.scss";
+.winnersTable {
+  display: grid;
+
+  grid-template-rows: repeat(auto-fit, minmax(0, max-content));
+  grid-template-columns: repeat(5, minmax(0, max-content));
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+}
+
+.carWinnerImage {
+  width: 40px;
+  height: 20px;
+}
+.tableItem {
+  font-family: $Roboto;
+  font-size: 16px;
+  font-weight: 500;
+  color: $white;
+}
+.tableTitle {
+  font-family: $Roboto;
+  font-size: 18px;
+  font-weight: 700;
+  color: $white;
+}
+.tableSortTitle {
+  cursor: pointer;
+}
