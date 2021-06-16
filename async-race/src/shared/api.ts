@@ -52,7 +52,7 @@ export const updateCar = async (id: number, body: { name: string; color: string 
 
 export const startEngine = async (id: number): Promise<{ velocity: number; distance: number }> => (await fetch(`${engine}?id=${id}&status=started`)).json();
 
-export const stopEngine = async (id: number): Promise<void> => (await fetch(`${engine}?id=${id}&status=stoped`)).json();
+export const stopEngine = async (id: number): Promise<void> => (await fetch(`${engine}?id=${id}&status=stopped`)).json();
 
 export const drive = async (id: number): Promise<{ success: boolean }> => {
   const res = await fetch(`${engine}?id=${id}&status=drive`).catch();

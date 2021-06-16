@@ -13,6 +13,8 @@ import { WinScreen } from './WinScreen/WinScreen';
 import { ICar } from '../../shared/interfaces/ICar';
 
 let cars: Car[];
+const CARS_ON_PAGE = 7;
+const FIRST_PAGE = 1;
 export class Garage extends Basecomponent {
   private createForm: Basecomponent = new Basecomponent('form', ['form']);
 
@@ -89,7 +91,7 @@ export class Garage extends Basecomponent {
     this.pagination.element.append(this.nextPage.element);
 
     this.updateStateGarage();
-    document.body.prepend(this.winScreen.element);
+    this.element.prepend(this.winScreen.element);
     this.winScreen.element.style.display = 'none';
 
     this.createForm.element.addEventListener('submit', async (event) => {
@@ -97,6 +99,7 @@ export class Garage extends Basecomponent {
       await createCar({ name: this.createInput.element.value, color: this.createColor.element.value });
       this.createColor.element.value = colors.white;
       this.createInput.element.value = '';
+      this.createSubmit.element.disabled = true;
       this.updateStateGarage();
     });
 
@@ -138,9 +141,8 @@ export class Garage extends Basecomponent {
   }
 
   updateStateGarage = async (): Promise<void> => {
-    const CARS_ON_PAGE = 7;
-    const FIRST_PAGE = 1;
     const COUNT_CAR_ON_PAGE = 0;
+
     const { items, count } = await getCars(store.carsPage);
     if (items.length === COUNT_CAR_ON_PAGE && store.carsPage !== FIRST_PAGE) {
       store.carsPage--;
@@ -160,16 +162,9 @@ export class Garage extends Basecomponent {
 
       this.garageTitle.element.innerHTML = `Garage (${store.carsCount})`;
       this.page.element.innerHTML = `Page #${store.carsPage}`;
-      if (store.carsCount > store.carsPage * CARS_ON_PAGE) {
-        this.nextPage.element.disabled = false;
-      } else {
-        this.nextPage.element.disabled = true;
-      }
-      if (store.carsPage > FIRST_PAGE) {
-        this.prevPage.element.disabled = false;
-      } else {
-        this.prevPage.element.disabled = true;
-      }
+      this.updatePaginButton();
+      this.raceButton.element.disabled = false;
+      this.winScreen.element.style.display = 'none';
     }
   };
 
@@ -182,10 +177,14 @@ export class Garage extends Basecomponent {
     store.selectedCar = id;
   };
 
-  resetCars = (): void => {
-    cars.map((car) => car.stopDriving(car.id));
-    this.raceButton.element.disabled = false;
+  resetCars = async (): Promise<void> => {
     this.winScreen.element.style.display = 'none';
+    await Promise.all(
+      cars.map(async (car) => {
+        await car.stopDriving(car.id);
+      }),
+    );
+    this.raceButton.element.disabled = false;
   };
 
   deleteCar = async (id: number, car: Car): Promise<void> => {
@@ -196,12 +195,17 @@ export class Garage extends Basecomponent {
   };
 
   race = async (): Promise<void> => {
+    this.resetButton.element.disabled = true;
     this.raceButton.element.disabled = true;
+    this.prevPage.element.disabled = true;
+    this.nextPage.element.disabled = true;
     const startDrivings = cars.map((car) => car.startDriving);
     const winner = await race(startDrivings);
     await saveWinner(winner);
     this.winScreen.renderWinScreen(winner.name as string, winner.time);
+    this.updatePaginButton();
     this.winScreen.element.style.display = 'block';
+    this.resetButton.element.disabled = false;
   };
 
   generationRandomCar = (): void => {
@@ -211,5 +215,18 @@ export class Garage extends Basecomponent {
       createCar({ name: getRandomName(), color: getRandomColor() });
     }
     this.updateStateGarage();
+  };
+
+  updatePaginButton = (): void => {
+    if (store.carsCount > store.carsPage * CARS_ON_PAGE) {
+      this.nextPage.element.disabled = false;
+    } else {
+      this.nextPage.element.disabled = true;
+    }
+    if (store.carsPage > FIRST_PAGE) {
+      this.prevPage.element.disabled = false;
+    } else {
+      this.prevPage.element.disabled = true;
+    }
   };
 }

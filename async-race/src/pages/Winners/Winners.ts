@@ -71,12 +71,14 @@ export class Winners extends Basecomponent {
   updateStateWinners = async (): Promise<void> => {
     const WINNERS_ON_PAGE = 10;
     const FIRST_PAGE = 1;
+    const INDEX = 1;
+    const ONE_PAGE = 1;
     const { items, count } = await getWinners({ page: store.winnersPage, sort: store.sortBy, order: store.sortOrder });
     store.winners = items;
     store.winnersCount = Number(count);
     this.winnersTable.element.innerHTML = `${store.winners
       .map(
-        (item: IWinners, index: number) => `<div class="tableItem">${index + 1}</div>
+        (item: IWinners, index: number) => `<div class="tableItem">${WINNERS_ON_PAGE * (store.winnersPage - ONE_PAGE) + (index + INDEX)}</div>
           ${new CarImage(item.car.color, 'carWinnerImage').element.outerHTML} 
           <div class="tableItem">${item.car.name}</div>
     <div class="tableItem">${item.wins}</div>

@@ -1,7 +1,7 @@
 import './car.scss';
 import { Basecomponent } from '../../shared/BaseComponent/BaseComponent';
 import { Button } from '../../shared/Button/Button';
-import { startEngine, drive } from '../../shared/api';
+import { startEngine, drive, stopEngine } from '../../shared/api';
 import { getDistanceBetweenElements, animation } from '../../shared/utils';
 import { store } from '../../shared/store';
 import { CarImage } from './CarImage/CarImage';
@@ -62,21 +62,28 @@ export class Car extends Basecomponent {
 
   startDriving = async (id: number): Promise<{ success: boolean; id: number; time: number }> => {
     const OFFSET = 50;
-    const { velocity, distance } = await startEngine(id);
+    await this.stopDriving(id);
     this.startEngine.element.disabled = true;
+    const { velocity, distance } = await startEngine(id);
     this.stopEngine.element.disabled = false;
     const time = Math.round(distance / velocity);
     const htmlDistance = Math.floor(getDistanceBetweenElements(this.carImage.element, this.flag.element)) + OFFSET;
     store.animation[id] = animation(this.carImage.element, htmlDistance, time);
     const { success } = await drive(id);
-    if (!success) window.cancelAnimationFrame(store.animation[id].id);
+    if (!success) {
+      window.cancelAnimationFrame(store.animation[id].id);
+    }
     return { success, id, time };
   };
 
   stopDriving = async (id: number): Promise<void> => {
     this.carImage.element.style.transform = 'translateX(0)';
-    if (store.animation[id]) window.cancelAnimationFrame(store.animation[id].id);
-    this.startEngine.element.disabled = false;
+    if (store.animation[id]) {
+      window.cancelAnimationFrame(store.animation[id].id);
+    }
+
     this.stopEngine.element.disabled = true;
+    await stopEngine(id);
+    this.startEngine.element.disabled = false;
   };
 }
