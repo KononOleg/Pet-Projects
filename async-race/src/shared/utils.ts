@@ -1,9 +1,11 @@
-import { ICar } from "./interfaces/ICar";
-import { store } from "./store";
+import { ICar } from './interfaces/ICar';
+import { store } from './store';
 
 function getPositionAtCenter(element: HTMLElement): { x: number; y: number } {
   const HALF = 2;
-  const { top, left, width, height } = element.getBoundingClientRect();
+  const {
+    top, left, width, height,
+  } = element.getBoundingClientRect();
   return {
     x: left + width / HALF,
     y: top + height / HALF,
@@ -56,14 +58,14 @@ export const race = async (actions: ((id: number) => Promise<{ success: boolean;
   const promises = store.cars.map((car: ICar, index: number) => actions[index](car.id));
   const winner = await raceAll(
     promises,
-    store.cars.map((car: { id: number }) => car.id)
+    store.cars.map((car: { id: number }) => car.id),
   );
   return winner;
 };
 
 export function getRandomName(): string {
-  const models = ["BMW", "Opel", "Audi", "Ford", "Renault", "Nissan", "Toyota", "Skoda", "Isuza", "Kia", "Lada", "Honda"];
-  const names = ["Golf", "Tiguan", "Camry", "CR-V", "Silverado", "Civic", "RAV4", "Corolla", "Logan", "Largus", "Solaris", "Creta"];
+  const models = ['BMW', 'Opel', 'Audi', 'Ford', 'Renault', 'Nissan', 'Toyota', 'Skoda', 'Isuza', 'Kia', 'Lada', 'Honda'];
+  const names = ['Golf', 'Tiguan', 'Camry', 'CR-V', 'Silverado', 'Civic', 'RAV4', 'Corolla', 'Logan', 'Largus', 'Solaris', 'Creta'];
 
   const model = models[Math.floor(Math.random() * models.length)];
   const name = names[Math.floor(Math.random() * names.length)];
@@ -71,8 +73,8 @@ export function getRandomName(): string {
 }
 
 export function getRandomColor(): string {
-  const letters = "0123456789ABCDEF";
-  let color = "#";
+  const letters = '0123456789ABCDEF';
+  let color = '#';
   const LETTER_IN_COLOR = 6;
   const FIRST_LETTER = 0;
   for (let i = FIRST_LETTER; i < LETTER_IN_COLOR; i++) {

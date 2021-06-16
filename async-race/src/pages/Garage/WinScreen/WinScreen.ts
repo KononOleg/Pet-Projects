@@ -1,9 +1,9 @@
-import "./winScreen.scss";
-import { Basecomponent } from "../../../shared/BaseComponent/BaseComponent";
+import './winScreen.scss';
+import { Basecomponent } from '../../../shared/BaseComponent/BaseComponent';
 
 export class WinScreen extends Basecomponent {
   constructor() {
-    super("div", ["winScreenModal"]);
+    super('div', ['winScreenModal']);
   }
 
   renderWinScreen = (car: string, time: number): void => {

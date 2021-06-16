@@ -16,8 +16,6 @@
   "rules": {
     "no-plusplus": "off",
     "no-console": "warn",
-    "eol-last": 0,
-    "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 0 }],
     "max-len": ["warn", { "code": 200 }],
     "indent": [
       "warn",

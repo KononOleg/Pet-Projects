@@ -1,8 +1,8 @@
-import { Basecomponent } from "../../../shared/BaseComponent/BaseComponent";
+import { Basecomponent } from '../../../shared/BaseComponent/BaseComponent';
 
 export class CarImage extends Basecomponent {
   constructor(color: string, style: string) {
-    super("div", [style]);
+    super('div', [style]);
 
     this.element.innerHTML = `
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 100 512 256" style="fill:${color}">

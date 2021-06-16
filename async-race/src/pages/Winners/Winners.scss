@@ -26,4 +26,13 @@
 }
 .tableSortTitle {
   cursor: pointer;
+  position: relative;
+  margin-right: 10px;
+}
+.tableSortTitle::after {
+  position: absolute;
+  right: -20px;
+}
+.tableSort::after {
+  content: "▼";
 }

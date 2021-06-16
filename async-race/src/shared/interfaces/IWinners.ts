@@ -1,4 +1,4 @@
-import { ICar } from "./ICar";
+import { ICar } from './ICar';
 
 export interface IWinners {
   id: number;

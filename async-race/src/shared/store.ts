@@ -1,5 +1,5 @@
-import { ICar } from "./interfaces/ICar";
-import { IWinners } from "./interfaces/IWinners";
+import { ICar } from './interfaces/ICar';
+import { IWinners } from './interfaces/IWinners';
 
 const FIRST_VALUE = 1;
 
@@ -25,6 +25,6 @@ export const store: IStore = {
   winners: [],
   winnersCount: FIRST_VALUE,
   winnersPage: FIRST_VALUE,
-  sortBy: "",
-  sortOrder: "",
+  sortBy: '',
+  sortOrder: '',
 };
