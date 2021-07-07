@@ -1,0 +1,53 @@
+@import "../../styles.scss";
+.statsTable {
+  display: grid;
+
+  grid-template-rows: repeat(auto-fit, minmax(0, max-content));
+  grid-template-columns: repeat(7, minmax(0, max-content));
+  gap: 20px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.tableItem {
+  font-family: $Roboto;
+  font-size: 20px;
+  font-weight: 500;
+  color: $white;
+  text-align: center;
+}
+.stats__button {
+  background-color: $red;
+  border: 0;
+
+  font-family: $Roboto;
+  color: $white;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 10px;
+  margin: 0 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.stats__button:hover {
+  background-color: $hover_red;
+}
+@media (max-width: 850px) {
+  .statsTable {
+    gap: 10px;
+  }
+  .tableItem {
+    font-size: 15px;
+  }
+}
+@media (max-width: 650px) {
+  .tableItem {
+    font-size: 8px;
+  }
+}
+@media (max-width: 520px) {
+  .statsTable {
+    gap: 5px;
+  }
+}

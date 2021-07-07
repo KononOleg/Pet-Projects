@@ -1,0 +1,52 @@
+@import "../../styles.scss";
+.footer__container {
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.github {
+  display: block;
+  width: 120px;
+  height: 45px;
+  padding-left: 45px;
+  background-size: 35px;
+  background-repeat: no-repeat;
+  background-position: left center;
+  line-height: 45px;
+  color: $white;
+  font-size: 24px;
+  font-family: $Roboto;
+  transition: 0.3s;
+}
+.rss {
+  display: block;
+  position: relative;
+  font-family: $Roboto;
+  width: 86px;
+  height: 32px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding-right: 15px;
+  z-index: 0;
+}
+.rss__year {
+  position: absolute;
+  bottom: 0;
+  right: -10px;
+  font-size: 21px;
+  letter-spacing: -2px;
+  color: $white;
+  line-height: 0.9;
+  font-weight: bold;
+  transition: 0.3s;
+}
+@media (max-width: 450px) {
+  .github {
+    font-size: 16px;
+  }
+}

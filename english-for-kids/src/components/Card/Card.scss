@@ -1,0 +1,95 @@
+@import "../../styles.scss";
+.card__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 100rem;
+  box-shadow: -10px 15px 30px -12px $black;
+  border-radius: 10%;
+  transition: 0.3s;
+}
+.card__container:hover {
+  box-shadow: -10px 15px 30px -12px $rose;
+}
+.card__container_isGame {
+  .card__info {
+    display: none;
+  }
+  .card__front {
+    background: no-repeat center/90% $white;
+  }
+}
+.card {
+  position: relative;
+  width: 250px;
+  aspect-ratio: 1/1;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transform-origin: right;
+  transition: all 0.5s;
+}
+
+.card_flip > .card {
+  transform: rotateY(180deg) translateX(-100%);
+  transform-origin: left;
+}
+.card__front,
+.card__back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10%;
+}
+.card__front {
+  background: no-repeat center 40%/70% $white;
+}
+
+.card__back {
+  background: no-repeat center 40%/70% $white;
+  transform: rotateY(180deg);
+}
+
+.card__info {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.card__word {
+  font-family: $Roboto;
+  color: $black;
+  font-size: 30px;
+  margin: 0;
+}
+.button_flip {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  border-bottom-right-radius: 25px;
+  border-top-left-radius: 20px;
+  background: $blue;
+  height: 40px;
+  width: 40px;
+  border: 0;
+  cursor: pointer;
+}
+
+.card_right {
+  opacity: 0.2;
+  pointer-events: none;
+}
+.button-flip__img {
+  height: 20px;
+  width: 25px;
+  transition: 0.3s;
+}
+.button_flip:hover {
+  .button-flip__img {
+    transform: rotate(180deg);
+  }
+}

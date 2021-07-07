@@ -1,0 +1,428 @@
+const cards = [
+  {
+    category: 'Animals',
+    data: [
+      {
+        word: 'elephant',
+        translation: 'слон',
+        image: 'img/elephant.png',
+        audioSrc: 'audio/elephant.mp3',
+      },
+      {
+        word: 'turtle',
+        translation: 'черепаха',
+        image: 'img/turtle.png',
+        audioSrc: 'audio/turtle.mp3',
+      },
+      {
+        word: 'shark',
+        translation: 'акула',
+        image: 'img/shark.png',
+        audioSrc: 'audio/shark.mp3',
+      },
+      {
+        word: 'dog',
+        translation: 'собака',
+        image: 'img/dog.png',
+        audioSrc: 'audio/dog.mp3',
+      },
+      {
+        word: 'whale',
+        translation: 'кит',
+        image: 'img/whale.png',
+        audioSrc: 'audio/whale.mp3',
+      },
+      {
+        word: 'pig',
+        translation: 'свинья',
+        image: 'img/pig.png',
+        audioSrc: 'audio/pig.mp3',
+      },
+      {
+        word: 'chicken',
+        translation: 'курица',
+        image: 'img/chicken.png',
+        audioSrc: 'audio/chicken.mp3',
+      },
+      {
+        word: 'mouse',
+        translation: 'мышь',
+        image: 'img/mouse.png',
+        audioSrc: 'audio/mouse.mp3',
+      },
+    ],
+  },
+  {
+    category: 'Country',
+    data: [
+      {
+        word: 'Poland',
+        translation: 'Польша',
+        image: 'img/Poland.png',
+        audioSrc: 'audio/Poland.mp3',
+      },
+      {
+        word: 'Finland',
+        translation: 'Финляндия',
+        image: 'img/Finland.png',
+        audioSrc: 'audio/Finland.mp3',
+      },
+      {
+        word: 'Canada',
+        translation: 'Канада',
+        image: 'img/Canada.png',
+        audioSrc: 'audio/Canada.mp3',
+      },
+      {
+        word: 'Germany',
+        translation: 'Германия',
+        image: 'img/Germany.png',
+        audioSrc: 'audio/Germany.mp3',
+      },
+      {
+        word: 'Ukraine',
+        translation: 'Украина',
+        image: 'img/Ukraine.png',
+        audioSrc: 'audio/Ukraine.mp3',
+      },
+      {
+        word: 'Russia',
+        translation: 'Россия',
+        image: 'img/Russia.png',
+        audioSrc: 'audio/Russia.mp3',
+      },
+      {
+        word: 'Japan',
+        translation: 'Япония',
+        image: 'img/Japan.png',
+        audioSrc: 'audio/Japan.mp3',
+      },
+      {
+        word: 'Spain',
+        translation: 'Испания',
+        image: 'img/Spain.png',
+        audioSrc: 'audio/Spain.mp3',
+      },
+    ],
+  },
+  {
+    category: 'Body',
+    data: [
+      {
+        word: 'hand',
+        translation: 'рука',
+        image: 'img/hand.png',
+        audioSrc: 'audio/hand.mp3',
+      },
+      {
+        word: 'foot',
+        translation: 'нога',
+        image: 'img/foot.png',
+        audioSrc: 'audio/foot.mp3',
+      },
+      {
+        word: 'neck',
+        translation: 'шея',
+        image: 'img/neck.png',
+        audioSrc: 'audio/neck.mp3',
+      },
+      {
+        word: 'elbow',
+        translation: 'локоть',
+        image: 'img/elbow.png',
+        audioSrc: 'audio/elbow.mp3',
+      },
+      {
+        word: 'ear',
+        translation: 'ухо',
+        image: 'img/ear.png',
+        audioSrc: 'audio/ear.mp3',
+      },
+      {
+        word: 'tongue',
+        translation: 'язык',
+        image: 'img/tongue.png',
+        audioSrc: 'audio/tongue.mp3',
+      },
+      {
+        word: 'nose',
+        translation: 'нос',
+        image: 'img/nose.png',
+        audioSrc: 'audio/nose.mp3',
+      },
+      {
+        word: 'head',
+        translation: 'голова',
+        image: 'img/head.png',
+        audioSrc: 'audio/head.mp3',
+      },
+    ],
+  },
+  {
+    category: 'Sport',
+    data: [
+      {
+        word: 'badminton',
+        translation: 'бадминтон',
+        image: 'img/badminton.png',
+        audioSrc: 'audio/badminton.mp3',
+      },
+      {
+        word: 'football',
+        translation: 'футбол',
+        image: 'img/football.png',
+        audioSrc: 'audio/football.mp3',
+      },
+      {
+        word: 'basketball',
+        translation: 'баскетбол',
+        image: 'img/basketball.png',
+        audioSrc: 'audio/basketball.mp3',
+      },
+      {
+        word: 'chess',
+        translation: 'шахматы',
+        image: 'img/chess.png',
+        audioSrc: 'audio/chess.mp3',
+      },
+      {
+        word: 'tennis',
+        translation: 'теннис',
+        image: 'img/tennis.png',
+        audioSrc: 'audio/tennis.mp3',
+      },
+      {
+        word: 'golf',
+        translation: 'голф',
+        image: 'img/golf.png',
+        audioSrc: 'audio/golf.mp3',
+      },
+      {
+        word: 'swimming',
+        translation: 'плавание',
+        image: 'img/swimming.png',
+        audioSrc: 'audio/swimming.mp3',
+      },
+      {
+        word: 'cricket',
+        translation: 'крикет',
+        image: 'img/cricket.png',
+        audioSrc: 'audio/cricket.mp3',
+      },
+    ],
+  },
+  {
+    category: 'Food',
+    data: [
+      {
+        word: 'apple',
+        translation: 'яблоко',
+        image: 'img/apple.png',
+        audioSrc: 'audio/apple.mp3',
+      },
+      {
+        word: 'tomato',
+        translation: 'помидор',
+        image: 'img/tomato.png',
+        audioSrc: 'audio/tomato.mp3',
+      },
+      {
+        word: 'cheese',
+        translation: 'сыр',
+        image: 'img/cheese.png',
+        audioSrc: 'audio/cheese.mp3',
+      },
+      {
+        word: 'cherry',
+        translation: 'вишня',
+        image: 'img/cherry.png',
+        audioSrc: 'audio/cherry.mp3',
+      },
+      {
+        word: 'pizza',
+        translation: 'пицца',
+        image: 'img/pizza.png',
+        audioSrc: 'audio/pizza.mp3',
+      },
+      {
+        word: 'steak',
+        translation: 'стейк',
+        image: 'img/steak.png',
+        audioSrc: 'audio/steak.mp3',
+      },
+      {
+        word: 'water',
+        translation: 'вода',
+        image: 'img/water.png',
+        audioSrc: 'audio/water.mp3',
+      },
+      {
+        word: 'bear',
+        translation: 'пиво',
+        image: 'img/bear.png',
+        audioSrc: 'audio/bear.mp3',
+      },
+    ],
+  },
+  {
+    category: 'Emotions',
+    data: [
+      {
+        word: 'happy',
+        translation: 'счастливый',
+        image: 'img/happy.png',
+        audioSrc: 'audio/happy.mp3',
+      },
+      {
+        word: 'angry',
+        translation: 'сердитый',
+        image: 'img/angry.png',
+        audioSrc: 'audio/angry.mp3',
+      },
+      {
+        word: 'quiet',
+        translation: 'тихий',
+        image: 'img/quiet.png',
+        audioSrc: 'audio/quiet.mp3',
+      },
+      {
+        word: 'crying',
+        translation: 'плачущий',
+        image: 'img/crying.png',
+        audioSrc: 'audio/crying.mp3',
+      },
+      {
+        word: 'bored',
+        translation: 'скучающий',
+        image: 'img/bored.png',
+        audioSrc: 'audio/bored.mp3',
+      },
+      {
+        word: 'sad',
+        translation: 'грустный',
+        image: 'img/sad.png',
+        audioSrc: 'audio/sad.mp3',
+      },
+      {
+        word: 'suspicious',
+        translation: 'подозрительный',
+        image: 'img/suspicious.png',
+        audioSrc: 'audio/suspicious.mp3',
+      },
+      {
+        word: 'embarrass',
+        translation: 'смущенный',
+        image: 'img/embarrass.png',
+        audioSrc: 'audio/embarrass.mp3',
+      },
+    ],
+  },
+  {
+    category: 'Nature',
+    data: [
+      {
+        word: 'waterfall',
+        translation: 'водопад',
+        image: 'img/waterfall.png',
+        audioSrc: 'audio/waterfall.mp3',
+      },
+      {
+        word: 'mountain',
+        translation: 'гора',
+        image: 'img/mountain.png',
+        audioSrc: 'audio/mountain.mp3',
+      },
+      {
+        word: 'island',
+        translation: 'остров',
+        image: 'img/island.png',
+        audioSrc: 'audio/island.mp3',
+      },
+      {
+        word: 'rainbow',
+        translation: 'радуга',
+        image: 'img/rainbow.png',
+        audioSrc: 'audio/rainbow.mp3',
+      },
+      {
+        word: 'sahara',
+        translation: 'сахара',
+        image: 'img/sahara.png',
+        audioSrc: 'audio/sahara.mp3',
+      },
+      {
+        word: 'sunset',
+        translation: 'закат',
+        image: 'img/sunset.png',
+        audioSrc: 'audio/sunset.mp3',
+      },
+      {
+        word: 'volcano',
+        translation: 'вулкан',
+        image: 'img/volcano.png',
+        audioSrc: 'audio/volcano.mp3',
+      },
+      {
+        word: 'autumn',
+        translation: 'осень',
+        image: 'img/autumn.png',
+        audioSrc: 'audio/autumn.mp3',
+      },
+    ],
+  },
+  {
+    category: 'Oktoberfest',
+    data: [
+      {
+        word: 'sausage',
+        translation: 'сосиска',
+        image: 'img/sausage.png',
+        audioSrc: 'audio/sausage.mp3',
+      },
+      {
+        word: 'fried',
+        translation: 'жаренный',
+        image: 'img/fried.png',
+        audioSrc: 'audio/fried.mp3',
+      },
+      {
+        word: 'barrel',
+        translation: 'бочка',
+        image: 'img/barrel.png',
+        audioSrc: 'audio/barrel.mp3',
+      },
+      {
+        word: 'overalls',
+        translation: 'комбинезон',
+        image: 'img/overalls.png',
+        audioSrc: 'audio/overalls.mp3',
+      },
+      {
+        word: 'wheat',
+        translation: 'пшеница',
+        image: 'img/wheat.png',
+        audioSrc: 'audio/wheat.mp3',
+      },
+      {
+        word: 'accordion',
+        translation: 'аккордеон',
+        image: 'img/accordion.png',
+        audioSrc: 'audio/accordion.mp3',
+      },
+      {
+        word: 'pretzel',
+        translation: 'крендель',
+        image: 'img/pretzel.png',
+        audioSrc: 'audio/pretzel.mp3',
+      },
+      {
+        word: 'hat',
+        translation: 'шляпа',
+        image: 'img/hat.png',
+        audioSrc: 'audio/hat.mp3',
+      },
+    ],
+  },
+];
+
+export default cards;
