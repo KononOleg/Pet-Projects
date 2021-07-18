@@ -1,0 +1,52 @@
+@import "../../styles.scss";
+.login__wrapper {
+  max-width: 400px;
+  height: 300px;
+  background-color: $white;
+  box-shadow: -10px 15px 30px -12px $black;
+  margin: auto;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 155px;
+}
+.login__input {
+  width: 50%;
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid $black;
+  margin: 10px 0;
+  font-family: $Roboto;
+  color: $black;
+  font-size: 20px;
+  outline: none;
+}
+.input_password {
+  -webkit-text-security: disc;
+}
+.login__buttons {
+  display: flex;
+}
+.login__button {
+  font-family: $Roboto;
+  color: $white;
+  font-size: 25px;
+  padding: 5px 10px;
+  margin: 0 10px;
+  cursor: pointer;
+
+  border-radius: 5px;
+  border: 0;
+  transition: 0.3s;
+}
+.login__button:hover {
+  transform: scale(1.1);
+}
+.login__button_login {
+  background-color: $green;
+}
+.login__button_cancel {
+  background-color: $hover_red;
+}

@@ -1,0 +1,31 @@
+@import "../../styles.scss";
+.AdminPage__wrapper {
+  min-height: calc(100vh - 65px);
+  max-width: 1200px;
+  padding: 0px 20px 20px 20px;
+  display: flex;
+  flex-direction: column;
+}
+.admin__header {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.admin__nav-link {
+  font-family: $Roboto;
+  color: $white;
+  font-size: 20px;
+  margin: 0;
+  text-decoration: none;
+}
+.admin__nav-link_not-active {
+  pointer-events: none;
+}
+
+.admin__nav-link_active {
+  text-decoration: underline;
+}

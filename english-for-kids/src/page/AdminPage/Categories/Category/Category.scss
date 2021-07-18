@@ -1,0 +1,89 @@
+@import "../../../../styles.scss";
+.category__wrapper {
+  width: 290px;
+  height: 240px;
+  border-radius: 5px;
+  box-shadow: -10px 15px 30px -12px $black;
+  padding: 25px;
+  box-sizing: border-box;
+  background-color: $white;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.category__title {
+  font-family: $Roboto;
+  color: $black;
+  font-size: 22px;
+  margin: 0 0 35px 0;
+  text-align: center;
+}
+.category__count-words {
+  font-family: $Roboto;
+  color: $black;
+  font-size: 22px;
+  margin: 0 0 60px 0;
+  text-align: left;
+  text-transform: uppercase;
+}
+.category__buttons {
+  display: flex;
+}
+
+.category__button {
+  font-family: $Roboto;
+  color: $white;
+  font-size: 16px;
+  padding: 5px 0;
+  margin: 0 20px;
+  cursor: pointer;
+  background-color: $light_blue;
+  border-radius: 5px;
+  border: 0;
+  width: 85px;
+}
+
+.category__button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.button_close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.button_close:hover {
+  transform: scale(1.1);
+}
+.button_close:before,
+.button_close:after {
+  position: absolute;
+  left: 15px;
+  content: " ";
+  height: 30px;
+  width: 5px;
+  background-color: $black;
+}
+.button_close:before {
+  transform: rotate(45deg);
+}
+.button_close:after {
+  transform: rotate(-45deg);
+}
+.category__input {
+  width: 60%;
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid $black;
+  margin: 8px 0 20px 0;
+  font-family: $Roboto;
+  color: $black;
+  font-size: 20px;
+  outline: none;
+}

@@ -1,0 +1,33 @@
+@import "../../../styles.scss";
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(315deg, $rose, $blue) 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.successModal__img {
+  height: 700px;
+}
+.Modal__title {
+  font-family: $Roboto;
+  font-size: 80px;
+  color: $white;
+  margin: 0;
+}
+.Modal__subtitle {
+  font-family: $Roboto;
+  font-size: 40px;
+  color: $white;
+}
+@media (max-width: 500px) {
+  .successModal__img {
+    height: 500px;
+  }
+}
